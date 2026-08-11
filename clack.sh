@@ -1659,6 +1659,7 @@ __clack_progress_loop() {
         # Build bar
         local char
         char=$(__clack_progress_get_char_for_style "$style")
+        ((max == 0)) && max=100
         local active=$(( (value * size) / max ))
         local inactive=$(( size - active ))
         local bar=""
